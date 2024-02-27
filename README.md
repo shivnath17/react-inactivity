@@ -45,6 +45,12 @@ function App() {
 export default App;
 ```
 
+## debug ([options])
+You can also pass debug flag to display usefull logs in your cansole (this is default false).
+```js
+  const { isIdeal } = useReactInactivity({ minute: 1, debug: true })
+```
+
 ## Support and Suggestions
 
 Submit any queries or suggestions in our [Github Repo](https://github.com/shivnath17/react-inactivity/issues).

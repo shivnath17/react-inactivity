@@ -1,3 +1,4 @@
 export type ReactInactivityProps = {
-  minute: number
+  minute: number,
+  debug?: boolean
 }

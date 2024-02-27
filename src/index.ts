@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ReactInactivityProps } from './types'
 
-const useReactInactivity = ({ minute }: ReactInactivityProps) => {
+const useReactInactivity = ({ minute, debug = false }: ReactInactivityProps) => {
   const [tracking, setTracking] = useState(false)
   const [isIdeal, setIsIdeal] = useState(false)
 
@@ -29,9 +29,9 @@ const useReactInactivity = ({ minute }: ReactInactivityProps) => {
       const diffMs = Math.abs(new Date(lastAcivity) - new Date()); // milliseconds between now & last activity
       const seconds = Math.floor((diffMs/1000));
       const mins = Math.floor((seconds/60));
-      console.log(seconds +' sec and '+mins+' min since last activity')
+      if (debug) console.log(seconds +' sec and '+mins+' min since last activity')
       if(mins == minute){
-        console.log(`No activity from last ${minute} minutes...`)
+        if (debug) console.log(`No activity from last ${minute} minutes...`)
         setIsIdeal(true)
         clearInterval(checkIntervals)
       }
