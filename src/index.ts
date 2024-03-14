@@ -13,10 +13,14 @@ const useReactInactivity = ({ minute, debug = false }: ReactInactivityProps) => 
 
     document.addEventListener("mousemove", updateStorage);
     document.addEventListener("click", updateStorage);
+    document.addEventListener("keyup", updateStorage);
+    document.addEventListener("keydown", updateStorage);
 
     return () => {
       document.removeEventListener("mousemove", updateStorage);
       document.removeEventListener("click", updateStorage);
+      document.addEventListener("keyup", updateStorage);
+      document.addEventListener("keydown", updateStorage);
     }
 
   }, [minute])
@@ -34,6 +38,7 @@ const useReactInactivity = ({ minute, debug = false }: ReactInactivityProps) => 
         if (debug) console.log(`No activity from last ${minute} minutes...`)
         setIsIdeal(true)
         clearInterval(checkIntervals)
+        localStorage.removeItem('lastActvity')
       }
     },1000)
     
