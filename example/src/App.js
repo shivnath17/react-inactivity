@@ -2,7 +2,7 @@ import './App.css';
 import { useReactInactivity } from 'react-inactivity'
 
 function App() {
-  const { isIdeal } = useReactInactivity({ minute: 1 })
+  const { isIdeal } = useReactInactivity({ minute: 1, debug: true })
 
   return (
     <div className="App">

@@ -16,7 +16,7 @@
     "url": "https://github.com/shivnath17/react-inactivity/issues"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "npm install && tsup && rm -rf node_modules/ && npm link react-inactivity"
   },
   "keywords": ["react-inactivity", "useReactInactivity", "isIdeal", "track user activity", "borwser ideal"],
   "author": "Shivnath Halder",
