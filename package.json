@@ -1,6 +1,6 @@
 {
   "name": "react-inactivity",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "The react-inactivity hook offers the perfect solution for tracking user inactivity over a specific period of time.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

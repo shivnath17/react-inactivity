@@ -34,7 +34,7 @@ const useReactInactivity = ({ minute, debug = false }: ReactInactivityProps) => 
       const seconds = Math.floor((diffMs/1000));
       const mins = Math.floor((seconds/60));
       if (debug) console.log(seconds +' sec and '+mins+' min since last activity')
-      if(mins == minute){
+      if(mins >= minute){
         if (debug) console.log(`No activity from last ${minute} minutes...`)
         setIsIdeal(true)
         localStorage.removeItem('lastActvity')
